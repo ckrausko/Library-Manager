@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
+   <children>
+      <Pane layoutX="-7.0" layoutY="-6.0" prefHeight="286.0" prefWidth="399.0">
+         <children>
+            <Button fx:id="btnAddAcct" layoutX="68.0" layoutY="109.0" mnemonicParsing="false" onAction="#sceneAddAccount" text="Add Account" />
+            <Button fx:id="btnAddBook" layoutX="68.0" layoutY="156.0" mnemonicParsing="false" onAction="#sceneAddBook" text="Add Book" />
+            <Button fx:id="btnCheckIn" layoutX="262.0" layoutY="109.0" mnemonicParsing="false" onAction="#sceneCheckIn" text="Check In" />
+            <Button fx:id="btnCheckOut" layoutX="262.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneCheckOut" text="Check Out" />
+            <Button fx:id="btnReport" layoutX="171.0" layoutY="209.0" mnemonicParsing="false" onAction="#sceneReport" text="Reports" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
