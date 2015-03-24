@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.control.*?>
@@ -11,11 +12,16 @@
    <children>
       <Pane layoutX="-7.0" layoutY="-6.0" prefHeight="286.0" prefWidth="399.0">
          <children>
-            <Button fx:id="btnAddAcct" layoutX="68.0" layoutY="109.0" mnemonicParsing="false" onAction="#sceneAddAccount" text="Add Account" />
-            <Button fx:id="btnAddBook" layoutX="68.0" layoutY="156.0" mnemonicParsing="false" onAction="#sceneAddBook" text="Add Book" />
-            <Button fx:id="btnCheckIn" layoutX="262.0" layoutY="109.0" mnemonicParsing="false" onAction="#sceneCheckIn" text="Check In" />
-            <Button fx:id="btnCheckOut" layoutX="262.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneCheckOut" text="Check Out" />
-            <Button fx:id="btnReport" layoutX="171.0" layoutY="209.0" mnemonicParsing="false" onAction="#sceneReport" text="Reports" />
+            <Button fx:id="btnAddAcct" layoutX="67.0" layoutY="109.0" mnemonicParsing="false" onAction="#sceneAddAccount" text="Add Account" />
+            <Button fx:id="btnAddBook" layoutX="67.0" layoutY="156.0" mnemonicParsing="false" onAction="#sceneAddBook" text="Add Book" />
+            <Button fx:id="btnCheckIn" layoutX="261.0" layoutY="109.0" mnemonicParsing="false" onAction="#sceneCheckIn" text="Check In" />
+            <Button fx:id="btnCheckOut" layoutX="261.0" layoutY="163.0" mnemonicParsing="false" onAction="#sceneCheckOut" text="Check Out" />
+            <Button fx:id="btnReport" layoutX="170.0" layoutY="209.0" mnemonicParsing="false" onAction="#sceneReport" text="Reports" />
+            <Label layoutX="126.0" layoutY="42.0" text="Library Manager">
+               <font>
+                  <Font name="Arial Narrow" size="24.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

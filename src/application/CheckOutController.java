@@ -59,7 +59,7 @@ public class CheckOutController implements Initializable{
 			Statement myStmt = myConn.createStatement();
 			// execute sql query
 			String sql = "UPDATE book "
-					+ " SET checked_out = '1' , account_id = " + "'" + txtAccountID.getText().trim() + "'" 
+					+ " SET date_out = NOW() , checked_out = '1' , account_id = " + "'" + txtAccountID.getText().trim() + "'" 
 					+ " WHERE book_id = " + "'" + txtBookID.getText().trim() + "'";
 			
 			myStmt.executeUpdate(sql);
