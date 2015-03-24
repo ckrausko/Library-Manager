@@ -2,6 +2,10 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -12,6 +16,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class CheckOutController implements Initializable{
@@ -27,12 +33,53 @@ public class CheckOutController implements Initializable{
 		app_stage.setScene(mainWindowScene);
 		app_stage.show();
 	}
-	// add a book
+	
+	// FXML fields 
 	@FXML
 	private Button btnCheckOut;
 	@FXML
-	private void checkInBook(ActionEvent event) throws IOException{
-	// sql to check out book 
+	private TextField txtAccountID;
+	@FXML
+	private TextField txtBookID;
+	@FXML
+	private Label lblOutput;
+	@FXML
+	private void checkOutBook(ActionEvent event) throws IOException{
+		//if all text fields are filled out
+		if(txtAccountID.getText().trim().isEmpty() == false && txtBookID.getText().trim().isEmpty() == false)
+		{
+			
+			
+		
+		
+		try{
+			// Get connection to database
+			Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_db", "root", "password");
+			// create a statement
+			Statement myStmt = myConn.createStatement();
+			// execute sql query
+			String sql = "UPDATE book "
+					+ " SET checked_out = '1' , account_id = " + "'" + txtAccountID.getText().trim() + "'" 
+					+ " WHERE book_id = " + "'" + txtBookID.getText().trim() + "'";
+			
+			myStmt.executeUpdate(sql);
+			lblOutput.setText("Checked out, book is due in 30 days");
+		
+			
+			
+			
+		}
+		catch(Exception exc){
+			exc.printStackTrace();
+		}
+		
+		}
+		
+		else{
+			
+			lblOutput.setText("Fill out fields");
+		}
+	
 	}
 	
 
